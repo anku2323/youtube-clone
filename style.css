@@ -1,0 +1,163 @@
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  display: flex;
+  height: 5rem;
+}
+.youtube-logo {
+  height: 30px;
+  margin-left: 60px;
+}
+.search-box {
+  height: 45px;
+  width: 38vw;
+  margin-left: 200px;
+  margin-right: 2vh;
+  padding: 10px 0;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.see {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  font-size: large;
+  position: relative;
+  left: -5%;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 1px solid black;
+  background-color: rgb(192, 192, 238);
+  border-radius: 0px 40px 40px 0px;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+.see i {
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mic {
+  font-size: x-large;
+  cursor: pointer;
+}
+.vid {
+  font-size: x-large;
+  gap: 40px;
+  margin-left: 130px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.alll {
+  height: 68vh;
+  width: 80vw;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: x-large;
+  cursor: pointer;
+}
+.side {
+  height: 75vh;
+  width: 20vw;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: x-large;
+  cursor: pointer;
+}
+#sec {
+  height: 5vh;
+  width: 75vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ph {
+  width: 75vw;
+}
+.ankush {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+#sec button {
+  padding: 4px 4px 4px 4px;
+  font-size: medium;
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+}
+.firs {
+  height: 242px;
+}
+.ph img {
+  border-radius: 20px;
+}
+#seo p {
+  font-size: x-large;
+}
+.search-icon {
+  display: flex;
+}
+.micro {
+  background-color: rgb(194, 208, 214);
+  border-radius: 50%;
+  height: 42px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.ph img {
+  cursor: pointer;
+}
+.ph {
+  display: flex;
+  font-size: x-large;
+}
+.name {
+  display: flex;
+}
+.pho {
+  width: 75vw;
+}
+.pho img {
+  border-radius: 20px;
+}
+.pho {
+  display: flex;
+  font-size: x-large;
+}
+iframe {
+  border-radius: 20px;
+}
+.side img {
+  height: 40px;
+  border-radius: 50%;
+}
+.sub {
+  display: flex;
+}
+.suba {
+  font-size: small;
+}
+.hove:hover {
+  background-color: rgb(127, 185, 185);
+  border-radius: 10px;
+  width: 80%;
+
+}
+.sub:hover{
+  background-color: rgb(127, 185, 185);
+  border-radius: 10px;
+  width: 80%;
+ 
+}

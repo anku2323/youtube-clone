@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Youtube</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <i class="fa-solid fa-bars"></i>
+            <img src="data:image/png;base64,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"
+                alt="" class="youtube-logo">
+            <div class="nav">
+                <div class="search-icon">
+                    <div>
+                        <input type="search" placeholder="" class="search-box">
+                    </div>
+                    <div class="see">
+                        <i class="fa-solid fa-magnifying-glass" id="sicon border"></i>
+                    </div>
+                </div>
+                <div class="micro">
+                    <i class="fa-solid fa-microphone" id="mic"></i>
+                </div>
+            </div>
+            <div class="vid border">
+                <i class="fa-solid fa-video" id="vide"></i>
+                <i class="fa-solid fa-bell" id="noti"></i>
+                <img src="Ankush-img.jpeg" alt="" class="ankush">
+            </div>
+        </div>
+    </div>
+    <div class="name">
+        <div class="side">
+            <p class="hove"><i class="fa-solid fa-house"></i>
+                Home
+            </p>
+            <p class="hove"><i class="fa-solid fa-circle-play"></i>
+                Shorts
+            </p>
+
+            <p class="hove"><i class="fa-solid fa-film"></i>
+                Subcriptions
+            </p>
+            <hr>
+            <p class="hove"><i class="fa-solid fa-file-video"></i>
+                Library
+            </p>
+            <p class="hove"><i class="fa-solid fa-clock-rotate-left"></i>
+                History
+            </p>
+            <p class="hove"><i class="fa-solid fa-video"></i>
+                Your videos
+            </p>
+
+            <p class="hove"><i class="fa-regular fa-clock"></i>
+                Watch Later
+            </p>
+            <p class="hove"><i class="fa-regular fa-thumbs-up"></i>
+                Liked videos
+            </p>
+            <hr>
+            <h4 class="hove">Explore</h4>
+            <p class="hove"><i class="fa-solid fa-fire"></i>
+                Trending
+            </p>
+            <p class="hove"><i class="fa-solid fa-bag-shopping"></i>
+                Shopping
+            </p>
+
+            <p class="hove"><i class="fa-solid fa-music"></i>
+                Music
+            </p>
+
+            <p class="hove"><i class="fa-solid fa-clapperboard"></i>
+                Movies
+            </p>
+
+
+
+            <hr>
+            <h4>Subscriptions</h4>
+            <div class="sub">
+                <p class="hove">
+                    <img src="https://digibrity.com/wp-content/uploads/2023/03/Rajan-ji-Maharaj-bio.jpg" alt="">
+
+                <p> Pujya Rajanji Maharaj</p>
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://images.bhaskarassets.com/web2images/521/2022/03/30/c305044f-5c92-45e5-8c8e-5cadd1722abe1648566875073_1648602645.jpg"
+                    alt="">
+                <p>
+                    Prem Bhushanji Maharaj
+                </p>
+            </div>
+            <div class="sub">
+                <img src="pandey.jpeg" alt="">
+                <p>
+                    Ankush Gupta
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://yt3.googleusercontent.com/nhDLqeIgXMJBDIrX2bXavvHoWX0tsslDEh7k2xZ1P0W8b_CMRVigp2kxJubYEVwBcBlogZDe=s900-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <p>
+                    Apna Collage
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://yt3.googleusercontent.com/ytc/AOPolaQMtqt8g-xxJ3BkIF06RPiJcIsPzbSOLOwDVAA5pw=s900-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <p>
+                    Code with Harry
+                </p>
+            </div>
+
+            <div class="sub">
+                <img src="data:image/png;base64,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"
+                    alt="">
+                <p>
+                    Navgurukul
+                </p>
+            </div>
+            <hr>
+            <h4>More from You Tube</h4>
+            <div class="sub">
+                <img src="https://thumbs.dreamstime.com/b/youtube-logo-icon-voronezh-russia-january-red-square-shadow-171161351.jpg"
+                    alt="">
+                <p>
+                    You Tube Premium
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://freelogopng.com/images/all_img/1656501968youtube-icon-png.png" alt="">
+                <p>
+                    You Tube Studio
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ5uqMO4AbtjdIWUTO0G22Kk_sq4e-2wXBHA&usqp=CAU"
+                    alt="">
+                <p>
+                    You Tube Music
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://image.similarpng.com/very-thumbnail/2020/07/Youtube-logo-with--new-style-Clip-art-PNG.png"
+                    alt="">
+                <p>
+                    You Tube Kids
+                </p>
+            </div>
+            <div class="sub">
+                <img src="https://pixlok.com/wp-content/uploads/2021/02/Splash-Youtube-Icon-PNG.jpg" alt="">
+                <p>
+                    You Tube Super
+                </p>
+            </div>
+            <hr>
+            <div class="sub">
+                <i class="fa-solid fa-gear"></i>
+                <p>
+                    Setting
+                </p>
+            </div>
+            <div class="sub">
+                <i class="fa-regular fa-flag"></i>
+                <p>
+                    Report History
+                </p>
+            </div>
+            <div class="sub">
+                <i class="fa-regular fa-circle-question"></i>
+                <p>
+                    Help
+                </p>
+            </div>
+            <div class="sub">
+                <i class="fa-regular fa-message"></i>
+                <p>
+                    Send Feedback
+                </p>
+            </div>
+
+
+            <hr>
+
+            <div class="suba">
+                <p>
+                    About Us
+                </p>
+                <p>
+                    Press
+                </p>
+                <p>
+                    Copyright
+                </p>
+            </div>
+
+            <div class="suba">
+                <p>
+                    Contact Us
+                </p>
+                <p>
+                    Craetors
+                </p>
+                <p>
+                    Advertisors
+                </p>
+            </div>
+            <div class="suba">
+                <p>
+                    Devlopers
+                </p>
+                <p>
+                    Terms
+                </p>
+                <p>
+                    Privacy
+                </p>
+            </div>
+
+            <div class="suba">
+                <p>
+                    Policy & Safety
+                </p>
+                <p>
+                    How You Tube Works
+                </p>
+                <p>
+                    Test New Features
+                </p>
+            </div>
+
+
+            <hr>
+            <br>
+
+
+
+
+        </div>
+        <div class="mera">
+            <div id="sec">
+
+                <button>Mixes </button>
+                <button>Music</button>
+                <button>Live</button>
+                <button>Rajan ji Bhajans </button>
+                <button>Bollywood</button>
+                <button>Hindi Old Songs</button>
+                <button>Bhojpuri</button>
+                <button>Movies</button>
+                <button>Satsang </button>
+                <button>Akshay Kumar</button>
+                <button>Sunny Deol</button>
+                <button>CID</button>
+                <button>Tamil Movie</button>
+
+            </div>
+
+            <div class="alll">
+                <div class="ph">
+                    <div><iframe width="425" height="250" src="https://www.youtube.com/embed/UTAvGzCK6ok?si=7eQCY83RqjS-mWiB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Valley Of The Lanterns | Full Movie | Family Fantasy Adventure Animation Movie | Family Central
+                            20M views
+
+                        </p>
+                    </div>
+                    <div>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/WNU1BEZIjxg?si=IXGnjs7gPs6m1wq-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>React Router Setup + Usage | Complete React Course in Hindi 
+                            374K views
+                        </p>
+                    </div>
+                    <div>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/R08vmJkUAU8?si=t0cHsvdpO3-2wf3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Mr Bean Animated | Super Trolley | Episode 15 | Videos For Kids | WildBrain Cartoons
+                            20M views
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="ph">
+                    <div>
+
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/Wvz-6ic7MYU?si=UXeYJh13QsalwlmN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Tom & Jerry in italiano | U-u-u-uccellino! | WB Kids
+                            6M views
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/vRO0eglarWU?si=18GRZo31JYQO0-SB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>
+                            Death Note | Relight 1-visions of a GOD (Movie)| English Dubbed | #deathnote #deathnotemovie #anime
+                            3.6M views
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/9wAiDhnNqsk?si=dQE4TdyMu-3nZWzI"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            A Silent Rupture Between Daya And Abhijeet's Bond! | CID Shocking Crimes | सीआईडी
+                            LIV Crime
+                            1.7M view
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="ph">
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/B8kakRjvjI4?si=QfVyxROdcqnB6FVZ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Free Computer Course With Free Certificate | 2023 | in Hindi 1.3M views
+
+
+                        </p>
+                    </div>
+                    <div>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/vK4Mno4QYqk?si=7uvRlns8u9stU9P1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>CYBERSECURITY RoadMap : How to become Ethical Hacker in 2024?
+                            372K views
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/OEQpRTXfxoo?si=OK1uI7uSDXwc2w6V"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Top 25 JavaScript Interview Questions
+                            Interview Happy
+                            116K views
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="ph">
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/eLKrjin4ous?si=VA0Dnlhs28bHBdG9"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Kapil ने क्यों बनाया Dr. Gulati का पुतला? |The Kapil Sharma Show | Best Of Sunil Grover
+
+                            2.2M views
+
+
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/snyXx2hipYY?si=hJo-_ZjwjwKFg7aJ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+
+                        <p>
+
+                            दस रुपए के टमाटर के साथ तुमको धनिया भी मुफ्त में चाहिए | राजपाल यादव, गोविंदा, लोटपोट कॉमेडी
+                            सीन
+
+                            38M views
+
+
+
+                        </p>
+                    </div>
+                    <div><iframe width="425" height="250" src="https://www.youtube.com/embed/MkcfB7S4fq0?si=EkUD0JHW76YWyq2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>
+                            How to Start Web Development? Complete Roadmap for FullStack Developer | 2022
+                            6.6M views
+
+                    </div>
+
+                </div>
+
+
+                <div class="ph">
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/R-AaPXZyKKY?si=FErxhcZe7WGvfYoV"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            The Kapil Sharma Show S2 -The Biggest Start For The Year With RRR -Ep 218-Full EP - 28 Mar
+                            2022
+                            SET India
+                            24M views
+
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/Kdz9J5vC4_o?si=SsfVKxq3riiyggTK"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+
+                        <p>
+
+                            JavaScript Tutorial for Beginners | Full Course to Learn What is JavaScript in Hindi
+                            WsCube Tech
+                            594K views
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/qfrocHBy6RQ?si=ZDjvYUl7FbNsw4-l"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Republic Bharat LIVE: G20 Summit 2023 Updates | Lucknow Rain | PM Modi | Rahul Gandhi |
+                            Breaking
+
+                            2.4K watching
+                    </div>
+
+                </div>
+
+
+                <div class="ph">
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/Yafji9PB1lM?si=xpH2i9CbTBhcwzR5"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Introduction to Strings | JavaScript Tutorial in Hindi #13
+                            CodeWithHarry
+                            278K views
+
+
+                        </p>
+                    </div>
+                    <div><iframe width="425" height="250" src="https://www.youtube.com/embed/xdyUpQybQ5Y?si=Nq8sH7c_76GqkuIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <p>
+                            New Punjabi Songs 2024 | Apa fer milange(Official VIDEO) Savi kahlon | Latest Punjabi Songs 2024. dc
+                            904K views
+
+                        </p>
+                    </div>
+                    <div><iframe width="425" height="250" src="https://www.youtube.com/embed/z0n1aQ3IxWI?si=tpeQhzkGu2cQCiZx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Satoru Gojo vs Sukuna | Fight Scene | English dubbed | Jujutsu Kaisen 1080p
+                            28k watching
+
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="ph">
+                    <div>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/PFMdBg7uGpE?si=Z3Zxs5DV9TutK4a2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Gojo's Second Domain Expansion | Jujutsu Kaisen Season 2 Episode 9 (4K 60FPS) | Hindi Dub
+                            842K views
+
+
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/AnxPeHsiBko?si=H2dK2MMGHfCfD89-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>
+                            Shaun the Sheep 🐑 Dig Sheep Dig! - Cartoons for Kids 🐑 Full Episodes Compilation [1 hour]
+
+                            99K views
+
+
+                        </p>
+                    </div>
+                    <div>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/_KYqjiqy9JI?si=ty7IEyrGXEWKLYSl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>
+                            Oggy và những chú gián tinh nghịch | THE GIANT người khổng lồ | S04E23 | phim hoạt hình
+                            80K views
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="pho">
+                    <div>
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/GeykycZ4Ixs?si=rVEygeODBXrcxE8D"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Create a Responsive Website Using HTML, CSS & JavaScript in Hindi
+                            CodeWithHarry
+                            1.7M views
+
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/ESnrn1kAD4E?si=14YLKJzYnD-4Dq8f"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>CSS Tutorial for Beginners | Complete CSS with Project, Notes & Code
+                            1.9M views
+                        </p>
+                    </div>
+                    <div>
+
+                        <iframe width="425" height="250"
+                            src="https://www.youtube.com/embed/BadZyp7tztw?si=OYWdmxFb6bJXM5cC"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <p>
+                            Accessing Children of an Element | JavaScript Tutorial in Hindi #32
+                            CodeWithHarry
+                            153K views
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
